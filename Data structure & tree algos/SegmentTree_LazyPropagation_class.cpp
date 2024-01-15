@@ -13,7 +13,7 @@ struct LT{
     }
     void clear(){
         memset(tree,0,sizeof tree);
-        //memset(lazy,0,sizeof lazy);
+        //memset(lazy,0,sizeof lazy);//on when build func off
         //memset(ar,0,sizeof ar);
     }
     inline void lazyUpdate(int nod,int sl,int sr){
@@ -90,7 +90,7 @@ signed main(){
                 break;
             }
         }
-        lt.clear();
+        lt.clear();///when build is on then no need to clear
 
     }
     return 0;

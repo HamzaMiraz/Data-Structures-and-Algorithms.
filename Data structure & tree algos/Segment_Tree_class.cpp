@@ -7,7 +7,7 @@ const int MAX_N =100007;
 const int oo = 2e9+10;
 int ar[MAX_N];
 struct ST{
-    ll tree[4*MAX_N];
+    int tree[4*MAX_N];
     ST(){
         clear();
     }
