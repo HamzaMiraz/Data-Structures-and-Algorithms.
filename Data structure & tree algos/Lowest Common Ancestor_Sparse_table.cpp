@@ -23,7 +23,7 @@ void leveling_dfs(int u){
 void Sparse_Table()
 {
     // creating sparse table
-    for(int p=0;p<log2(V);p++)
+    for(int p=0;p<=log2(V)+1;p++)
     {
         for(int i=1;i<=V;i++)
         {
@@ -40,7 +40,7 @@ int LCA(int u,int v)
     if(LVL[u]>LVL[v])
         swap(u,v);
     //Bring u and v in same level
-    for(int i=log2(V);i>=0;i--){
+    for(int i=log2(V)+1;i>=0;i--){
         int x = A[v][i];
         if(LVL[u]==LVL[x]){
             v=x;
@@ -51,7 +51,7 @@ int LCA(int u,int v)
     }
     if(u==v)return u;
 
-    for(int i=log2(V);i>=0;i--)
+    for(int i=log2(V)+1;i>=0;i--)
     {
         if(A[u][i] != -1 && A[u][i] != A[v][i])
         {
@@ -75,7 +75,7 @@ int main()
         for(i=0;i<Size;i++)
         {
             adj[i].clear();
-            for(j=0;j<log2(V);j++)
+            for(j=0;j<=log2(V);j++)
                 A[i][j] = -1;
         }
         for(i=1;i<V;i++)
