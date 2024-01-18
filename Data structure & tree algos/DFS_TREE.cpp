@@ -93,7 +93,7 @@ void dfs(int u,int par=-1)
     order.push_back(u);
 
     finishTime[u] = Time;
-    Flattening_tree[Time]=u;
+    Flattening_tree[Time]=u;// change 0,-u
     Time++;
 }
 
