@@ -99,7 +99,7 @@ int dijkstra(int source, int destination){
         if(dist[u] < uDist) {
             continue;
         }
-
+        dist[u] = uDist;
         for(int i=0;i<graph[u].size();i++)
         {
             int v = graph[u][i];
