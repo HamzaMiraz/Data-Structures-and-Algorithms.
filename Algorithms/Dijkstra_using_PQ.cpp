@@ -99,14 +99,14 @@ int dijkstra(int source, int destination){
         if(dist[u] < uDist) {
             continue;
         }
-        dist[u] = uDist;
+        
         for(int i=0;i<graph[u].size();i++)
         {
             int v = graph[u][i];
             int edgeWeight = weight[u][i];
 
-            if(dist[v] > dist[u] + edgeWeight){
-                dist[v] = dist[u] + edgeWeight;
+            if(dist[v] > uDist + edgeWeight){
+                dist[v] = uDist + edgeWeight;
                 par[v] = u;
                 pq.push({v, dist[v]});
             }
