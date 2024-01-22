@@ -17,7 +17,7 @@ struct debugger
 using namespace __gnu_pbds;
 template<class T> using iset=tree<T,null_type,less<T>,
 rb_tree_tag,tree_order_statistics_node_update> ;///exmp= iset<double>st 
-///who is k'th position= set.find_by_order(k),index of v = set.order_of_key(v);
+///who is k'th position= *(set.find_by_order(k)),index of v = set.order_of_key(v);
 
 typedef long long ll;/// 1e18;
 //typedef __int128_t LL;/// 1e32;
@@ -63,7 +63,7 @@ reverse(dg.begin(),dg.end());return dg;}
 #define LCM(a,b)  (a*b)/__gcd(a,b)
 #define sqr(a)    ((a)*(a))
 #define deg(n)  n*PI/180 /// redian to degree
-#define sp(n,x)  fixed << setprecision(x) <<n
+#define sp(n,d)  fixed << setprecision(d) <<n
 #define pb emplace_back
 #define F  first
 #define S  second
@@ -90,6 +90,7 @@ int main()
     {
 
     }
+    //cerr<<"\nTime:"<<1000*((double)clock())/(double)CLOCKS_PER_SEC<<"ms\n"; 
     return 0;
 }
 ///invisible =  
