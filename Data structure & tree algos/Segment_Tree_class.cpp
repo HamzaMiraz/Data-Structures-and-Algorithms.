@@ -12,7 +12,7 @@ struct ST{
         clear();
     }
     void clear(){
-        memset(tree,0,sizeof tree);
+        //memset(tree,0,sizeof tree);
         //memset(ar,0,sizeof ar);
     }
     void build(int nod,int sl,int sr){
@@ -35,7 +35,7 @@ struct ST{
         if(qr<sl || ql>sr)return 0;/// out of the range ,0/-oo/oo;
         int mid = (sl+sr)/2;
         int left_child = 2*nod , right_child = 2*nod+1;
-        
+
         return query(left_child,sl,mid,ql,qr)+query(right_child,mid+1,sr,ql,qr);///change
     }
     void update(int nod,int sl,int sr , int pos,int val){
@@ -67,8 +67,7 @@ signed main(){
             cin>>ty;
             if(ty==1){
                 cin>>pos>>val;
-                ar[pos]=val;
-                st.update(1,1,n,pos,val);
+                st.update(1,1,n,pos,ar[pos]=val);
             }else if(ty==2){
                 cin>>ql>>qr;
                 cout<<st.query(1,1,n,ql,qr)<<"\n";
