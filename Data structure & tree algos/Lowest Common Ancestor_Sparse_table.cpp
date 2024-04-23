@@ -61,7 +61,11 @@ int LCA(int u,int v)
     }
     return par[u];
 }
-
+void build_LCA(int source){
+    LVL[source]=1,par[source]=source;
+    leveling_dfs(source);
+    Sparse_Table();
+}
 int main()
 {
 //    freopen("in.txt","r",stdin);
@@ -72,10 +76,10 @@ int main()
 
     while(scanf("%d",&V)==1)
     {
-        for(i=0;i<Size;i++)
+        for(i=0;i<V+2;i++)
         {
             adj[i].clear();
-            for(j=0;j<=log2(V);j++)
+            for(j=0;j<=log2(V+1);j++)
                 A[i][j] = -1;
         }
         for(i=1;i<V;i++)
@@ -86,9 +90,7 @@ int main()
         }
 
         int source=1;
-        LVL[source]=1,par[source]=1;
-        leveling_dfs(source);
-        Sparse_Table();
+        build_LCA(source);
         
         scanf("%d%d",&u,&v);
         printf("%d\n",LCA(u,v));
