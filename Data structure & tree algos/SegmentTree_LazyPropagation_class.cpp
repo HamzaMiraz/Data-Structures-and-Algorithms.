@@ -105,10 +105,6 @@ void solve(){
 }
 int main()
 {
-#ifndef ONLINE_JUDGE
-     freopen("inputf.in", "r", stdin);  ///To read from a file.
-//    freopen("outputf.in", "w", stdout);  ///To write  a file.
-#endif
     cin.tie(nullptr)->sync_with_stdio(false);
     int t=1;
     //cin>>t;
