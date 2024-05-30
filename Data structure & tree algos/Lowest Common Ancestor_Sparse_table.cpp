@@ -61,6 +61,10 @@ int LCA(int u,int v)
     }
     return par[u];
 }
+int distance(int u,int v){
+    int an=LCA(u,v);
+    return LVL[u]+LVL[v]-2*LVL[an];
+}
 void build_LCA(int source){
     LVL[source]=1,par[source]=source;
     leveling_dfs(source);
@@ -93,7 +97,8 @@ int main()
         build_LCA(source);
         
         scanf("%d%d",&u,&v);
-        printf("%d\n",LCA(u,v));
+        printf("LCA = %d\n",LCA(u,v));
+        //printf("distance = %d\n",distance(u,v));
         
     }
 
