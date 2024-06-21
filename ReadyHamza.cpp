@@ -68,6 +68,8 @@ reverse(dg.begin(),dg.end());return dg;}
 #define el cout<<"\n";
 #define yes cout<<"Yes\n";
 #define no cout<<"No\n";
+#define YES cout<<"YES\n";
+#define NO cout<<"NO\n";
 
 template <typename T>
 using minHeap = priority_queue<T, vector<T>, greater<T>>;
@@ -88,7 +90,7 @@ int main()
      freopen("inputf.in", "r", stdin);  ///To read from a file.
 //    freopen("outputf.in", "w", stdout);  ///To write  a file.
 #endif
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    cin.tie(nullptr)->sync_with_stdio(false);
     int t=1;
     //cin>>t;
     while(t--){
