@@ -41,14 +41,10 @@ T fact(T n){if(n<=1)return 1;return n*fact(n-1);}
 template <typename T>
 T nPr(T n, T r){return fact(n)/fact(n-r);}///NPR
 
-template <typename T>
-vector<T>BigFactorial(T n){vector<T> dg;dg.push_back(1);
-for (T f=2;f<=n;f++) {T c = 0;for (T i= 0;i<dg.size();i++){
-T p=dg[i]*f+c;dg[i]=p%10;c=p/10;}while(c){dg.push_back(c%10);c/=10;}}
-reverse(dg.begin(),dg.end());return dg;}
 
 #define deb(a)     cout<<__LINE__<<"# "<<#a<<" -> "<<a<<endl;
 #define all(x) x.begin(), x.end()
+#define loop(IV,INIT,NV) for(int IV=INIT;IV<=NV;IV++)
 #define lbv(vec,x) lower_bound(all(vec),x)-vec.begin()//retrun index
 #define ubv(vec,x) upper_bound(all(vec),x)-vec.begin()
 #define lba(ar,n,x) lower_bound(ar,ar+n,x)-&ar[0];//return index
@@ -79,22 +75,22 @@ const double EPS = 1e-7; ///1*10^-7
 const int oo = 1e9+10;
 const ll MOD = 1e9 +7;// Prime
 
-int ks;
-void solve(){
-    //cout<<"Case "<<++ks<<": ";
+void solve(int ks){
+    //cout<<"Case "<<ks<<": ";
+
 }
 
-int main()
+signed main()
 {
 #ifndef ONLINE_JUDGE
      freopen("inputf.in", "r", stdin);  ///To read from a file.
 //    freopen("outputf.in", "w", stdout);  ///To write  a file.
 #endif
     cin.tie(nullptr)->sync_with_stdio(false);
-    int t=1;
-    //cin>>t;
-    while(t--){
-        solve();
+    int tks=1;
+    //cin>>tks;
+    for(int ks=1;ks<=tks;ks++){
+        solve(ks);
     }
     //cerr<<"\nTime:"<<1000*((double)clock())/(double)CLOCKS_PER_SEC<<"ms\n";
     return 0;
