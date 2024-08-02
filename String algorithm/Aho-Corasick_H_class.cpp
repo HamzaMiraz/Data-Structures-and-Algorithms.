@@ -2,7 +2,7 @@
 using namespace std;
 
 
-///Time Complexity: O(n + l + z), where ‘n’ is the length of the text, ‘l’ is the length of keywords, and ‘z’ is the number of matches.
+///Time Complexity: O(n + l + z), where ‘n’ is the length of the text, ‘l’(sum of all all ptrns len) is the length of keywords, and ‘z’ is the number of matches.
 
 const int MX_P = 100;/// maximum number of patterns
 struct AhoCorasick{
@@ -11,7 +11,7 @@ struct AhoCorasick{
     const int root = 0;
     vector<vector<int>>next;
     vector<int>link;///suffix link/failure link
-    vector<bitset<MX_P>>output;///bitset points which which patterns output
+    vector<bitset<MX_P>>output;///bitset points which which patterns output indicated by this state
     bitset<MX_P>zero;/// zero
     vector<int>occr;
 
@@ -44,7 +44,7 @@ struct AhoCorasick{
         for(int ch=0;ch<26;ch++){
             if(next[root][ch]){
                 int stat_lvl1=next[root][ch];/// stat_lvl1=state which connect with root
-                link[stat_lvl1]=root;
+                link[stat_lvl1]=root;///make level 1 states failure link with root  
                 Q.push(stat_lvl1);
             }
         }
@@ -54,9 +54,11 @@ struct AhoCorasick{
                 if(next[currentState][ch]){
                     int child_state=next[currentState][ch];
                     int failure=link[currentState];
-                    while(failure!=root && !next[failure][ch])
+
+                    while(failure!=root && !next[failure][ch])///finding failure node
                         failure=link[failure];
                     failure=next[failure][ch];
+
                     link[child_state]=failure;
                     output[child_state]|=output[failure];///a state also indicate failure_states all outputs 
                     Q.push(child_state);
