@@ -2,7 +2,7 @@
 using namespace std;
 
 
-///Time Complexity: O(n + l + z), where ‘n’ is the length of the text, ‘l’(sum of all all ptrns len) is the length of keywords, and ‘z’ is the number of matches.
+///Time Complexity: O(n + l + z), where ‘n’ is the length of the text, ‘l’(sum of all ptrns len) is the length of keywords, and ‘z’ is the number of matches.
 
 const int MX_P = 100;/// maximum number of patterns
 struct AhoCorasick{
