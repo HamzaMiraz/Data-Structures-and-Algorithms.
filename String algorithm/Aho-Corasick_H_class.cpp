@@ -73,7 +73,7 @@ struct AhoCorasick{
         return currentState=next[currentState][ch];
     }
     void searchWords(string pattern[],string &text){
-        int currentState=0;
+        int currentState=root;
         for(int i=0;i<text.size();i++){
             int ch=text[i]-'a';
             currentState=find_NextState(currentState,ch);
@@ -128,4 +128,9 @@ signed main()
 5
 hamza miraz jahid bipul naim
 hamzaamirmirazjahidbipulbipulrajuhamzahamzajahid
+
+
+resource:
+https://daniel.lawrence.lu/blog/y2014m03d25/
+https://www.geeksforgeeks.org/aho-corasick-algorithm-pattern-searching/
 */
