@@ -51,7 +51,7 @@ private:
     }
     void update(int nod,int sl,int sr , int pos,ll val){///change data type
         if(pos==sl && pos==sr){
-            tre[nod]=val;
+            tre[nod]=val;///change
             return;
         }
         if(pos>sr || pos<sl)return;/// position is out of the range
