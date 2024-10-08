@@ -15,7 +15,7 @@ struct debugger
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
-template<class T> using iset=tree<T,null_type,less<T>,
+template<class T>using iset=tree<T,null_type,less<T>,///descending_order=greater<T>,multi_iset=less_equal<T>
 rb_tree_tag,tree_order_statistics_node_update> ;///exmp= iset<double>st
 ///who is k'th position= *(set.find_by_order(k)),index of v = set.order_of_key(v);
 
