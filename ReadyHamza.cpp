@@ -75,8 +75,7 @@ const double EPS = 1e-7; ///1*10^-7
 const int oo = 1e9+10;
 const ll MOD = 1e9 +7;// Prime
 
-void solve(int ks){
-    //cout<<"Case "<<ks<<": ";
+void solve(){
 
 }
 
@@ -88,9 +87,10 @@ signed main()
 #endif
     cin.tie(nullptr)->sync_with_stdio(false);
     int tks=1;
-    //cin>>tks;
+    cin>>tks;
     for(int ks=1;ks<=tks;ks++){
-        solve(ks);
+        //cout<<"Case "<<ks<<": ";
+        solve();
     }
     //cerr<<"\nTime:"<<1000*((double)clock())/(double)CLOCKS_PER_SEC<<"ms\n";
     return 0;
