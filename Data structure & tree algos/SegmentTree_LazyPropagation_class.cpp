@@ -36,7 +36,7 @@ struct LazyTree{
 
         tre[nod] = tre[left_child] + tre[right_child];///change
     }
-    int query(int nod,int sl,int sr,int ql,int qr){
+    ll query(int nod,int sl,int sr,int ql,int qr){
         lazyUpdate(nod,sl,sr);
         if(ql<=sl && sr<=qr){///fully overlaped
             return tre[nod];
@@ -47,7 +47,7 @@ struct LazyTree{
 
         return query(left_child,sl,mid,ql,qr)+query(right_child,mid+1,sr,ql,qr);///change
     }
-    void update(int nod,int sl,int sr,int ql,int qr,int val){
+    void update(int nod,int sl,int sr,int ql,int qr,ll val){
         lazyUpdate(nod,sl,sr);
         if(ql<=sl && sr<=qr){///fully overlaped
             lazy[nod]+=val;
