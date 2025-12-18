@@ -3,6 +3,7 @@ using namespace std;
 
 const int N = 5010;
 
+//O(V^2 E)
 const long long inf = 1LL << 61;
 struct Dinic {
   struct edge {
@@ -68,7 +69,7 @@ struct Dinic {
       while (long long nw = dfs(s, inf)) flow += nw;
     }
     flow_through.assign(mxid + 10, 0);
-    for(int i = 0; i < n; i++) for(auto e : g[i]) if(e.id >= 0) flow_through[e.id] = e.flow;
+    //for(int i = 0; i <=n; i++) for(auto e : g[i]) if(e.id >= 0) flow_through[e.id] = e.flow;
     return flow;
   }
 };
@@ -77,9 +78,10 @@ int main() {
   cin >> n >> m;
   Dinic F(n + 1);
   for (int i = 1; i <= m; i++) {
-    int u, v, w;
+    int u, v, w;/// onse based
     cin >> u >> v >> w;
     F.add_edge(u, v, w);
+    //F.add_edge(v, u, w);// bi directional
   }
   cout << F.max_flow(1, n) << '\n';
   return 0;
