@@ -5,7 +5,7 @@ Articulation_Point algorithm : if we remove  a node from
 the graph and thats makes the graph to one more parts of graph
 thats kind of nodes call by Articulation_Point
 **/
-void art_point_dfs(int node,int parent,int vis[],int timer,int tin[],
+void art_point_dfs(int node,int parent,int vis[],int &timer,int tin[],
         int tlow[],vector<int>adj[],set<int>&art_points){
     vis[node]=1;
     tin[node]=tlow[node]=timer;
